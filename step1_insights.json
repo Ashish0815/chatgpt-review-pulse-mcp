@@ -1,0 +1,63 @@
+{
+  "product": "ChatGPT Android app (Google Play, India)",
+  "window": "2026-08-04 to 2026-10-12 (10 weeks)",
+  "data": {
+    "raw_reviews": 44567,
+    "complaints_1_to_3_star": 38567,
+    "substantive_complaints_5plus_words": 12257,
+    "llm_sample": 515,
+    "coverage_note": "2-star covers the full 10 weeks; 1-star from 10 Sep and 3-star from 25 Aug (fetch caps). Weekly trends use 2-star only for a like-for-like comparison."
+  },
+  "themes": [
+    {"id": "T1", "name": "Free-plan limits & upgrade pressure", "share_of_substantive_complaints": 21.8,
+     "summary": "Free users hit caps on images (often 1-3), attachments, chat and voice, then get cooldowns of hours and repeated upgrade prompts. Includes ~950 reviews that are about image *limits*, not image quality."},
+    {"id": "T3", "name": "App bugs, login & update regressions", "share_of_substantive_complaints": 14.4,
+     "summary": "Endless sign-in loading, crashes, lag, broken select-all/copy, missing dark mode, chats not syncing or disappearing, low voice volume after updates."},
+    {"id": "T2", "name": "Answer quality & instruction-following", "share_of_substantive_complaints": 14.2,
+     "summary": "Wrong answers given confidently, ignores instructions, forgets context mid-chat; users cross-check with Gemini."},
+    {"id": "T4", "name": "Image quality & content-policy blocks", "share_of_substantive_complaints": 14.0,
+     "summary": "Faces altered in edits, output not matching the prompt, harmless requests blocked as policy violations."},
+    {"id": "T5", "name": "Trust, privacy & ethics", "share_of_substantive_complaints": 3.5,
+     "summary": "Data/privacy worries, perceived bias, environmental (water) concerns."}
+  ],
+  "top_3_themes": ["T1", "T3", "T2"],
+  "ranking_caveat": "T3, T2 and T4 are within 0.4 points of each other; keyword sizing cannot separate them. T3 ranked above T4 because regressions are directly actionable by the app team this week.",
+  "quotes": [
+    {"theme": "T1", "review_id": "0333b694-87d2-4eb5-af9c-c9e1679b250c", "date": "2026-10-12", "rating": 1,
+     "text": "We can ask questions for free, but when it comes to generating images, it works only once or twice before asking us to upgrade and pay. Why call it a free app if image generation is so limited?"},
+    {"theme": "T3", "review_id": "6caf6135-918a-48e2-9e29-3a9494cd2887", "date": "2026-09-14", "rating": 1,
+     "text": "I can't open or log in to this app, I have clear the cache and data anything but it is stuck on an endless loading for sign in."},
+    {"theme": "T2", "review_id": "ad09fd14-e374-4675-b911-d0490dbea59a", "date": "2026-10-02", "rating": 1,
+     "text": "worst app galat answer deta haiii haar baar gemini pe jaake cross check karna paadta haiii . har 10 mcq me se 4 galat bata ta haiii.",
+     "translation": "Worst app, gives wrong answers; every time I have to cross-check on Gemini. It gets 4 out of 10 MCQs wrong."}
+  ],
+  "fee_issue": {
+    "name": "Free-plan limits vs the paid upgrade (ChatGPT Go / Plus)",
+    "what_users_are_confused_about": [
+      "What the free plan actually includes, and why it is called free if images stop after 1-3",
+      "Why limits differ between users and how to see how much is left",
+      "When a limit resets, and why the upgrade prompt still appears after the cooldown",
+      "Whether text chat continues once image/file limits are hit",
+      "What paying for ChatGPT Go or Plus unlocks, and billing problems (paid but plan not active, charged after stopping use, cancelling)"
+    ],
+    "evidence": {
+      "theme_share": "21.8% of substantive complaints (2,674 reviews)",
+      "breakdown_within_theme_pct": {
+        "hit a limit or cooldown": 43.4,
+        "pushed to upgrade / 'not really free'": 32.3,
+        "paid but still limited": 7.5,
+        "billing problem (charged, refund, cancel, not activated)": 4.2,
+        "limits unclear or inconsistent": 3.5,
+        "price too high": 2.9
+      },
+      "explicit_chatgpt_go_mentions": 73,
+      "trend": "Share of 2-star complaints about limits/upgrades rose from ~15% (early Aug) to 24-29% (mid-Sep to early Oct)."
+    },
+    "supporting_quotes": [
+      {"review_id": "c5e754fd-27a8-400d-aec7-e5a85b433db5", "text": "The dont say why some users have 1 picture to generate(me) and some 3-5. they are hiding that info."},
+      {"review_id": "28eb08a3-c6e1-4f4d-9c01-4a2a43d1c87c", "text": "Sometimes I have to upgrade, but it's not free, but the limit has expired, so why is it showing the upgrade already?"},
+      {"review_id": "eb90a800-b6a5-471c-8fe7-4dba0fed58e9", "text": "i have pay for chatgpt go why not active??"}
+    ]
+  },
+  "method": "Themes found by reading the 515-review weekly sample (LLM step), then sized with keyword rules across all 12,257 substantive complaints (size_themes.py). Keyword sizing is approximate and multi-label; 45% of substantive complaints were too vague or in another script to tag."
+}
