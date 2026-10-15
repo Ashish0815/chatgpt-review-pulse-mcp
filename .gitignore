@@ -1,0 +1,8 @@
+   # secrets — never commit
+   credentials.json
+   token.json
+   config.json
+
+   # local environment
+   .venv/
+   __pycache__/
