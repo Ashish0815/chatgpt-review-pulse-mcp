@@ -12,7 +12,16 @@ LOG = ROOT / "approval_log.csv"
 
 
 def load_config():
-    return json.loads(CONFIG.read_text(encoding="utf-8"))
+    """config.json is private (git-ignored); fall back to the committed example."""
+    path = CONFIG if CONFIG.exists() else ROOT / "config.example.json"
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def output_file(name):
+    """Find an output file in outputs/ if that folder exists, else next to this script."""
+    cfg = load_config()
+    candidate = ROOT / cfg.get("outputs_dir", "outputs") / name
+    return candidate if candidate.exists() else ROOT / name
 
 
 def save_config(cfg):
@@ -33,10 +42,9 @@ def md_to_text(md):
 def build_payload():
     """Read outputs/ and return the structured entry the brief asks for."""
     cfg = load_config()
-    d = ROOT / cfg.get("outputs_dir", "outputs")
-    insights = json.loads((d / "step1_insights.json").read_text(encoding="utf-8"))
-    pulse_md = (d / "weekly_pulse.md").read_text(encoding="utf-8")
-    fee_md = (d / "fee_explainer.md").read_text(encoding="utf-8")
+    insights = json.loads(output_file("step1_insights.json").read_text(encoding="utf-8"))
+    pulse_md = output_file("weekly_pulse.md").read_text(encoding="utf-8")
+    fee_md = output_file("fee_explainer.md").read_text(encoding="utf-8")
 
     themes = {t["id"]: t for t in insights["themes"]}
     top_themes = [f'{themes[i]["name"]} ({themes[i]["share_of_substantive_complaints"]}%)'
